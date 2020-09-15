@@ -24,6 +24,14 @@ def insert_into_tree(value: object, root: Node) -> Node:
     return root
 
 
+def pre_order(root: Node) -> Node:
+    if root is None:
+        return
+    print(root.value)
+    pre_order(root.left)
+    pre_order(root.right)
+
+
 if __name__ == '__main__':
     tree = generate_sort_tree([5, 6, 3, 2, 4, 1, 9, 7, 8, 0])
     print(tree)
