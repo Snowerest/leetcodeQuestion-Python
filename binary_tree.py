@@ -30,6 +30,22 @@ def pre_order(root: Node) -> Node:
     print(root.value)
     pre_order(root.left)
     pre_order(root.right)
+    
+    
+def save_value_to_list(root: Node, vl: list) -> None:
+    if root is None:
+        return
+    vl.append(root.value)
+    save_value_to_list(root.left, vl)
+    save_value_to_list(root.right, vl)
+    
+
+def tree_to_list(root: Node) -> list:
+    if root is None:
+        return []
+    result = []
+    save_value_to_list(root, result)
+    return result
 
 
 if __name__ == '__main__':
